@@ -95,6 +95,13 @@
       <button id="open">Open</button>
     </div>
     <script>
+      if(window.location.hostname == "open.popup.tk") {
+        let address = window.location.hash.replace("#", "");
+        if (!/^https:\/\/|^http:\/\//.test(address))
+          address = `https://${address}`;
+        window.open(address, "", ["popup=yes"]);
+      }
+      
       const website = document.getElementById("website");
       const openButton = document.getElementById("open");
 
