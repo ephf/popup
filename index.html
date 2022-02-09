@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Popup</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: #333;
+      }
+
+      div {
+        position: absolute;
+        left: 50vw;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+      }
+
+      div * {
+        position: absolute;
+        display: block;
+      }
+
+      input {
+        top: -25px;
+        background: #29b;
+        color: #fff;
+        border: none;
+        border-radius: 100px;
+        outline: none;
+        padding: 10px;
+        text-align: center;
+        transition: 1s;
+        filter: drop-shadow(0 0 10px #0003);
+        transform: translateX(-50%);
+      }
+
+      input:hover {
+        background: #73d;
+        top: -30px;
+        padding: 15px;
+        filter: drop-shadow(0 0 7px #0005);
+      }
+
+      input:focus {
+        background: #d25;
+      }
+
+      input::placeholder {
+        color: #bbb;
+      }
+
+      button {
+        top: 25px;
+        background: #29b;
+        color: #fff;
+        border: none;
+        border-radius: 100px;
+        outline: none;
+        padding: 10px;
+        text-align: center;
+        transition: 1s;
+        filter: drop-shadow(0 0 10px #0003);
+        transform: translateX(-50%);
+      }
+
+      button:hover {
+        background: #73d;
+        top: 20px;
+        padding: 15px;
+        filter: drop-shadow(0 0 7px #0005);
+      }
+
+      button:active {
+        background: #d25;
+      }
+
+      img {
+        position: absolute;
+        left: 50vw;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="background.png" />
+    <div>
+      <input id="website" placeholder="website.com" />
+      <button id="open">Open</button>
+    </div>
+    <script>
+      const website = document.getElementById("website");
+      const openButton = document.getElementById("open");
+
+      openButton.onclick = () => {
+        let address = website.value;
+        if (!/^https:\/\/|^http:\/\//.test(address))
+          address = `https://${address}`;
+        window.open(address, "", ["popup=yes"]);
+      };
+    </script>
+  </body>
+</html>
