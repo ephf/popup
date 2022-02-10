@@ -7,6 +7,7 @@
       * {
         margin: 0;
         padding: 0;
+        font-family: 'arial';
       }
       
       body {
@@ -14,18 +15,33 @@
       }
       
       div {
+        position: absolute;
+        width: 77vw;
         left: 50vw;
         top: 50vh;
         transform: translate(-50%, -50%);
       }
       
       h2, p {
+        position: relative;
         left: 50%;
         transform: translateX(-50%);
         color: #29b;
+        text-align: center;
+        margin: 10px;
+        transition: 2s;
       }
       
-      h2:hover, p:hover {
+      a {
+        color: #29b;
+        transition: 2s;
+      }
+      
+      h2:hover, p:hover, a:hover {
+        color: #d25;
+      }
+      
+      p:hover * {
         color: #d25;
       }
     </style>
@@ -33,7 +49,7 @@
   <body>
     <div>
       <h2>Could not find that url!</h2>
-      <p>The main site is 'popout.tk', alternatively you can go to 'open.popout.tk#website.com' to automatically open a website.</p>
+      <p>The main site is <a href="https://popout.tk">popout.tk</a>, alternatively you can go to <a href="https://open.popout.tk">open.popout.tk#website.com</a> to automatically open a website.</p>
     </div>
   </body>
 </html>
