@@ -4,18 +4,21 @@ to = "404.html"
 status = 404
 
 [[redirect]]
-from = "js.popout.tk"
+from = "https://js.popout.tk"
 to = "api/recent.js"
+status = 200
 
 [[redirect]]
-from = "/js.popout.tk/*"
+from = "https://js.popout.tk/*"
 to = "api/:splat.js"
+status = 200
 
 [[redirect]]
-from = "docs.popout.tk"
+from = "https://docs.popout.tk"
 to = "api/docs.html"
+status = 200
 
 [[headers]]
-for = "js.popout.tk/*"
+for = "https://js.popout.tk/*"
 [headers.values]
 Access-Control-Allow-Origin = "*"
