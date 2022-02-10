@@ -12,5 +12,5 @@ from = "https://js.popout.tk/*"
 to = "api/:splat.js"
 
 [[redirect]]
-from "https://docs.popout.tk"
+from = "https://docs.popout.tk"
 to = "api/docs.html"
