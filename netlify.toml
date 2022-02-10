@@ -14,3 +14,8 @@ to = "api/:splat.js"
 [[redirect]]
 from = "https://docs.popout.tk"
 to = "api/docs.html"
+
+[[headers]]
+for = "https://js.popout.tk/*"
+[headers.values]
+Access-Control-Allow-Origin = "*"
