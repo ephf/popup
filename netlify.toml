@@ -4,21 +4,21 @@ to = "404.html"
 status = 404
 
 [[redirect]]
-from = "js.popout.tk"
+from = "https://js.popout.tk"
 to = "https://ephf.github.io/popup/api/recent.js"
 force = true
 
 [[redirect]]
-from = "js.popout.tk/*"
+from = "https://js.popout.tk/*"
 to = "https://ephf.github.io/popup/api/:splat.js"
 force = true
 
 [[redirect]]
-from = "docs.popout.tk"
+from = "https://docs.popout.tk"
 to = "https://ephf.github.io/popup/api/docs.html"
 force = true
 
 [[headers]]
-for = "js.popout.tk/*"
+for = "https://js.popout.tk/*"
 [headers.values]
 Access-Control-Allow-Origin = "*"
