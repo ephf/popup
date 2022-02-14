@@ -2,7 +2,7 @@ window.p = (type) => {
   const handler = (a, isPopup) => {
     a.onclick = (e) => {
       e.preventDefault();
-      window.open(a.href, "", isPopup ? ["popup=true"] : []);
+      window.open(a.href, "", isPopup ? ["popout=true"] : []);
     };
   };
   const observer = (isPopup) => {
@@ -31,6 +31,6 @@ p.set = (a, type) => {
     );
   a.onclick = (e) => {
     e.preventDefault();
-    window.open(a.href, "", type == "popup" ? ["popup=true"] : []);
+    window.open(a.href, "", type == "popout" ? ["popout=true"] : []);
   };
 };
