@@ -1,1 +1,392 @@
-<h1>comming soon :)</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popout Docs</title>
+    <link rel="icon" href="../background.png" />
+    <script src="https://js.popout.tk"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      u {
+        text-decoration: none;
+      }
+
+      body {
+        background: #333;
+        overflow: hidden;
+      }
+
+      div#top {
+        position: absolute;
+        width: 100vw;
+        height: 40vh;
+        top: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #0003;
+        transform: translateY(-50%);
+        transition: 3s;
+      }
+
+      div#top code {
+        margin: 10px;
+      }
+
+      p,
+      h1,
+      button,
+      a {
+        font-family: "Segoe UI";
+      }
+
+      div#top p {
+        color: #eee;
+        font-size: 12px;
+      }
+
+      div#top h1 {
+        color: #eee;
+      }
+
+      img#icon {
+        position: absolute;
+        left: 50vw;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        transition: 3s;
+      }
+
+      code {
+        background: #222;
+        border: 1px solid #191919;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ccc;
+      }
+
+      code.html u.tag {
+        color: #44a;
+      }
+
+      code.html u.param {
+        color: #5bb;
+      }
+
+      code.html u.string {
+        color: #c75;
+      }
+
+      code.js u.function {
+        color: #ec5;
+      }
+
+      code.js u.string {
+        color: #c75;
+      }
+
+      code.js u.semi {
+        color: #999;
+      }
+
+      code.js u.def {
+        color: #acf;
+      }
+
+      button#open {
+        background: #29b;
+        color: #fff;
+        border: none;
+        border-radius: 100px;
+        outline: none;
+        padding: 10px;
+        text-align: center;
+        transition: 1s;
+        filter: drop-shadow(0 0 10px #0003);
+      }
+
+      button#open:hover {
+        background: #73d;
+        filter: drop-shadow(0 0 7px #0005);
+      }
+
+      button#open:active {
+        background: #d25;
+      }
+
+      div#docs {
+        position: absolute;
+        top: 100vh;
+        transition: 3s;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        padding-right: 17px;
+      }
+
+      div#docs code,
+      div#docs p,
+      div#docs i {
+        display: block;
+        margin: 5px;
+      }
+
+      div#docs a {
+        color: #f94;
+      }
+
+      div#d1 {
+        position: absolute;
+        left: calc(10vw - 5px);
+        width: 40vw;
+        height: 200px;
+        top: 150px;
+      }
+
+      div#o1 {
+        position: absolute;
+        left: calc(40vw + 10px);
+        width: 40vw;
+        top: 0px;
+        margin: 20px;
+      }
+
+      div#d1::after {
+        content: "";
+        position: absolute;
+        left: calc(40vw + 4px);
+        width: 1px;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #555;
+        top: 0;
+      }
+
+      p#d1 {
+        color: #eee;
+        font-size: 20px;
+      }
+
+      i#d1html,
+      i#d1js {
+        color: #eee;
+      }
+
+      div#d2 {
+        position: absolute;
+        left: calc(10vw - 5px);
+        width: 40vw;
+        top: 550px;
+      }
+
+      div#o2 {
+        position: absolute;
+        left: calc(40vw + 10px);
+        width: 40vw;
+        top: 0px;
+        margin: 20px;
+      }
+
+      div#d2::after {
+        content: "";
+        position: absolute;
+        left: calc(40vw + 4px);
+        width: 1px;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #555;
+        top: 0;
+      }
+
+      p#d2 {
+        color: #eee;
+        font-size: 20px;
+      }
+
+      i#d2html,
+      i#d2js {
+        color: #eee;
+      }
+
+      div#d3 {
+        position: absolute;
+        left: calc(10vw - 5px);
+        width: 40vw;
+        top: 950px;
+      }
+
+      div#o3 {
+        position: absolute;
+        left: calc(40vw + 10px);
+        width: 40vw;
+        top: 0px;
+        margin: 20px;
+      }
+
+      div#d3::after {
+        content: "";
+        position: absolute;
+        left: calc(40vw + 4px);
+        width: 1px;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #555;
+        top: 0;
+      }
+
+      p#d3 {
+        color: #eee;
+        font-size: 20px;
+      }
+
+      i#d3html,
+      i#d3js {
+        color: #eee;
+      }
+
+      div#space {
+        position: absolute;
+        top: 1400px;
+        height: 50px;
+        width: 50px;
+      }
+
+      div#o3 * {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="icon" src="../background.png" />
+    <div id="top">
+      <h1>Popout.js</h1>
+      <p>Simple popouts</p>
+      <code class="html"
+        >&lt;<u class="tag">script</u> <u class="param">src</u>=<u
+          class="string"
+          >"https://js.popout.tk"</u
+        >&gt;&lt;/<u class="tag">script</u>&gt;</code
+      >
+      <button id="open" onclick="openDocs()">Go To Docs</button>
+    </div>
+    <div id="docs">
+      <div id="d1">
+        <p id="d1">Simple popouts with 3 lines of code.</p>
+        <br />
+        <i id="d1html">html</i>
+        <code class="html"
+          >&lt;<u class="tag">script</u> <u class="param">src</u>=<u
+            class="string"
+            >"https://js.popout.tk"</u
+          >&gt;&lt;/<u class="tag">script</u>&gt;</code
+        >
+        <code id="d1chtml" class="html"
+          >&lt;<u class="tag">a</u> <u class="param">href</u>=<u class="string"
+            >"https://wikipedia.org"</u
+          >&gt;Open Wiki&lt;<u class="tag">a</u>&gt;</code
+        >
+        <i id="d1js">JavaScript</i>
+        <code id="d1cjs" class="js"
+          ><u class="function">p</u>(<u class="string">"popout"</u>)<u
+            class="semi"
+            >;</u
+          ></code
+        >
+        <div id="o1">
+          <a id="o1a" href="https://wikipedia.org">Open Wiki</a>
+        </div>
+      </div>
+      <div id="d2">
+        <p id="d2">Or open in new tab.</p>
+        <br />
+        <i id="d2html">html</i>
+        <code class="html"
+          >&lt;<u class="tag">script</u> <u class="param">src</u>=<u
+            class="string"
+            >"https://js.popout.tk"</u
+          >&gt;&lt;/<u class="tag">script</u>&gt;</code
+        >
+        <code id="d2chtml" class="html"
+          >&lt;<u class="tag">a</u> <u class="param">href</u>=<u class="string"
+            >"https://wikipedia.org"</u
+          >&gt;Open Wiki (in new tab)&lt;<u class="tag">a</u>&gt;</code
+        >
+        <i id="d2js">JavaScript</i>
+        <code id="d2cjs" class="js"
+          ><u class="function">p</u>(<u class="string">"new"</u>)<u class="semi"
+            >;</u
+          ></code
+        >
+        <div id="o2">
+          <a id="o2a" href="https://wikipedia.org">Open Wiki (in new tab)</a>
+        </div>
+      </div>
+      <div id="d3">
+        <p id="d3">Change individually.</p>
+        <br />
+        <i id="d3html">html</i>
+        <code class="html"
+          >&lt;<u class="tag">script</u> <u class="param">src</u>=<u
+            class="string"
+            >"https://js.popout.tk"</u
+          >&gt;&lt;/<u class="tag">script</u>&gt;</code
+        >
+        <code id="d3chtml" class="html"
+          >&lt;<u class="tag">a</u> <u class="param">id</u>=<u class="string"
+            >"link1"</u
+          >
+          <u class="param">href</u>=<u class="string">"https://wikipedia.org"</u
+          >&gt;Open Wiki (popout)&lt;<u class="tag">a</u>&gt;</code
+        >
+        <code id="d3chtml" class="html"
+          >&lt;<u class="tag">a</u> <u class="param">id</u>=<u class="string"
+            >"link2"</u
+          >
+          <u class="param">href</u>=<u class="string">"https://wikipedia.org"</u
+          >&gt;Open Wiki (new tab)&lt;<u class="tag">a</u>&gt;</code
+        >
+        <i id="d3js">JavaScript</i>
+        <code id="d3cjs" class="js"
+          ><u class="def">p</u>.<u class="function">set</u>(<u class="def"
+            >document</u
+          >.<u class="function">getElementById</u>(<u class="string">"link1"</u
+          >), <u class="string">"popout"</u>)<u class="semi">;</u></code
+        >
+        <code id="d3cjs" class="js"
+          ><u class="def">p</u>.<u class="function">set</u>(<u class="def"
+            >document</u
+          >.<u class="function">getElementById</u>(<u class="string">"link2"</u
+          >), <u class="string">"new"</u>)<u class="semi">;</u></code
+        >
+        <div id="o3">
+          <a id="o3a1" href="https://wikipedia.org">Open Wiki (popout)</a>
+          <a id="o3a2" href="https://wikipedia.org">Open Wiki (new tab)</a>
+        </div>
+      </div>
+      <div id="space"></div>
+    </div>
+
+    <script>
+      p.set(document.getElementById("o1a"), "popout");
+      p.set(document.getElementById("o2a"), "new");
+      p.set(document.getElementById("o3a1"), "popout");
+      p.set(document.getElementById("o3a2"), "new");
+
+      function openDocs() {
+        const top = document.getElementById("top");
+        const icon = document.getElementById("icon");
+        top.style.top = icon.style.top = "-100vh";
+        const docs = document.getElementById("docs");
+        docs.style.top = "0px";
+      }
+    </script>
+  </body>
+</html>
