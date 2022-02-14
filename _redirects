@@ -1,4 +1,4 @@
 /* 404.html 404
-https://js.popout.tk https://popout.tk/api/recent 301!
-https://js.popout.tk/* https://popout.tk/api/:splat 301!
-https://docs.popout.tk https://popout.tk/api/docs 301!
+https://js.popout.tk https://popout.tk/api/recent.js 301!
+https://js.popout.tk/* https://popout.tk/api/:splat.js 301!
+https://docs.popout.tk https://popout.tk/api 301!
