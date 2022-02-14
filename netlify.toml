@@ -6,20 +6,20 @@ status = 404
 [[redirect]]
 from = "https://js.popout.tk"
 to = "https://ephf.github.io/popup/api/recent.js"
-force = true
 status = 301
+force = true
 
 [[redirect]]
 from = "https://js.popout.tk/*"
 to = "https://ephf.github.io/popup/api/:splat.js"
-force = true
 status = 301
+force = true
 
 [[redirect]]
 from = "https://docs.popout.tk"
 to = "https://ephf.github.io/popup/api/docs.html"
-force = true
 status = 301
+force = true
 
 [[headers]]
 for = "https://js.popout.tk/*"
