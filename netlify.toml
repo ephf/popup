@@ -1,4 +1,4 @@
 [[headers]]
-for = "https://js.popout.tk/*"
+for = "/*"
 [headers.values]
 Access-Control-Allow-Origin = "*"
