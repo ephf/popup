@@ -25,7 +25,7 @@ window.p = (type) => {
   );
 };
 p.set = (a, type) => {
-  if (type != "popup" || type != "new")
+  if (type != "popout" || type != "new")
     return console.warn(
       `type "${type}" is not a valid type.\n\nChoose either: "new" or "popout"`
     );
